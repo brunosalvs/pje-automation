@@ -202,10 +202,10 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 👤 Autor
 
-**Seu Nome**
+**Bruno Salviano**
 
-- LinkedIn: [linkedin.com/in/seu-perfil](https://www.linkedin.com/in/bruno-salviano-gomes/)
-- GitHub: [@seu-usuario](git@github.com:brunosalvs)
+- LinkedIn: [linkedin.com/in/bruno-salviano-gomes](https://www.linkedin.com/in/bruno-salviano-gomes/)
+- GitHub: [@brunosalvs](https://github.com/brunosalvs)
 - Email: brunosalvianog@gmail.com
 
 ## 🙏 Agradecimentos
