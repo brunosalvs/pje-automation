@@ -1,0 +1,22 @@
+{
+  "advogado": {
+    "senha": "SUA_SENHA_AQUI",
+    "cpf": "00000000000",
+    "descricao": "Perfil de Advogado"
+  },
+  "magistrado": {
+    "senha": "SUA_SENHA_AQUI",
+    "cpf": "00000000000",
+    "descricao": "Perfil de Magistrado"
+  },
+  "servidor": {
+    "senha": "SUA_SENHA_AQUI",
+    "cpf": "00000000000",
+    "descricao": "Perfil de Servidor Criminal"
+  },
+  "administrador": {
+    "senha": "SUA_SENHA_AQUI",
+    "cpf": "00000000000",
+    "descricao": "Perfil de Administrador"
+  }
+}
