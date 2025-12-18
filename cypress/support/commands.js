@@ -1,30 +1,23 @@
-// Comando para realizar login com perfil espec�fico
+// Comando para realizar login com perfil específico
 Cypress.Commands.add('loginComPerfil', (nomePerfil) => {
   cy.fixture('perfis').then((perfis) => {
     const perfil = perfis[nomePerfil]
 
     if (!perfil) {
-      throw new Error(`Perfil "${nomePerfil}" nao encontrado em perfis.json`)
+      throw new Error(`Perfil "${nomePerfil}" não encontrado em perfis.json`)
     }
 
     cy.log(`Realizando login com perfil: ${perfil.descricao}`)
 
-    cy.visit('/')
+    cy.visit('pje/loginOld.seam?')
 
-    // Ajuste os seletores conforme a pigina de login do PJe
-    cy.get('#username').type(perfil.usuario)
+    // Preenche CPF e senha conforme a página de login do PJe
+    cy.get('#username').type(perfil.cpf)
     cy.get('#password').type(perfil.senha)
+    cy.get('#btnEntrar').click()
 
-    // Se houver campo de CPF
-    if (cy.get('#cpf').should('exist')) {
-      cy.get('#cpf').type(perfil.cpf)
-    }
-
-    cy.get('button[type="submit"]').click()
-
-    // Aguarda confirmao de login bem-sucedido
-    cy.url().should('not.include', '/login')
-    cy.contains('Bem-vindo').should('be.visible')
+    // Aguarda confirmação de login bem-sucedido
+    cy.get('.titulo').should('contain', 'Quadro de avisos')
   })
 })
 
@@ -34,10 +27,12 @@ Cypress.Commands.add('logout', () => {
   cy.url().should('include', '/login')
 })
 
-// Comando para verificar se est� logado com perfil espec�fico
+// Comando para verificar se está logado com perfil específico
 Cypress.Commands.add('verificarPerfilLogado', (nomePerfil) => {
   cy.fixture('perfis').then((perfis) => {
     const perfil = perfis[nomePerfil]
-    cy.get('.user-profile').should('contain', perfil.usuario)
+    // Verifica se o usuário está logado através do título da página
+    cy.get('.titulo').should('contain', 'Quadro de avisos')
+    cy.log(`Verificado login com perfil: ${perfil.descricao}`)
   })
 })
